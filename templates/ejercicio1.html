@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Programacion Web Examen</title>
+    <link rel="stylesheet" href="/static/css/estilos.css">
+</head>
+<body>
+<div class="ContenedorEjercicio1">
+    <h2>Calculo de compras</h2>    
+    <form method="POST">
+        <div class="form-group">
+            <label for="nombre">Ingresa tu nombre</label>
+            <input type="text" name="nombre" value={{nombre}}>
+        </div>
+        <div class="form-group">
+            <label for="edad">Ingresa tu edad</label>
+            <input type="number" name="edad" value={{edad}}>
+        </div>
+        <div class="form-group">
+            <label for="tarros">Ingresa la cantidad de tarros de pintura a comprar</label>
+            <input type="number" name="tarros" value={{tarros}}>
+        </div>            
+        <div class="form-group">
+        <input type="submit" value="Calcular">
+        </div>  
+    </form> 
+    {% if nombre %}
+    <div class="cierre">
+        <p>Nombre cliente: {{nombre}}</p>        
+        <p>Total sin descuento: ${{total}}</p>
+        <p>El descuento es: ${{descuento}}</p>  
+        <p>El total a pagar es de: ${{totalConDescuento}}</p>               
+    </div>
+    {% endif %}
+    {% if error %}
+    <div class="cierre">
+        <p>{{error}}</p>
+        <p>ingrese parametros validos</p>        
+    </div>
+    {% endif %}    
+</div>  
+</body>
+</html>
